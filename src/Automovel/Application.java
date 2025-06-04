@@ -1,6 +1,6 @@
 package Automovel;
 
-public class Main {
+public class Application {
     public static void main(String[] args) {
         CarroAutomatico carro = new CarroAutomatico(4,180);
         MotoPartidaPedal moto = new MotoPartidaPedal(2,120);
