@@ -12,9 +12,6 @@ public class Lesson12 {
         int[] randomVector1 = generateRandomNumbers(vector1);
         int[] randomVector2 = generateRandomNumbers(vector2);
 
-//        System.out.println(Arrays.toString(randomVector1));
-//        System.out.println(Arrays.toString(randomVector2));
-
         int[] mergedVector = mergeArrays(randomVector1, randomVector2);
         Arrays.sort(mergedVector);
 
@@ -22,8 +19,8 @@ public class Lesson12 {
     }
 
     public static int[] generateRandomNumbers(int[] vector){
+        Random random = new Random();
         for (int i = 0; i < vector.length ; i++){
-            Random random = new Random();
             int numberRandom = random.nextInt(101);
             vector[i] = numberRandom;
 

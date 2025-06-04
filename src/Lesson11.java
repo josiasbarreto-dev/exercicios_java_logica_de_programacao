@@ -7,9 +7,9 @@ public class Lesson11 {
     public static void main(String[] args) {
         int size = 100;
         int[] vector = new int[size];
+        Random random = new Random();
 
         for (int i = 0; i < vector.length ; i++){
-            Random random = new Random();
             int numberRandom = random.nextInt(101);
             vector[i] = numberRandom;
         }
