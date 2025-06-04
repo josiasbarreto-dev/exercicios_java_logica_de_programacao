@@ -12,19 +12,17 @@ public class Lesson13 {
         float nota1 = 4.6f;
         float nota2 = 6.9f;
 
-        Lesson13 aluno = new Lesson13();
-
-        float media = aluno.calculateStudentAverage(nota1, nota2);
+        float media = calculateStudentAverage(nota1, nota2);
 
         System.out.println(media);
-        aluno.showStudentStatus(media);
+        showStudentStatus(media);
     }
 
-    public float calculateStudentAverage (float nota1, float nota2){
+    public static float calculateStudentAverage (float nota1, float nota2){
         return (nota1 + nota2) / 2;
     }
 
-    public void showStudentStatus(float nota){
+    public static void showStudentStatus(float nota){
         if (nota < 4){
             System.out.println("Reprovado!");
         }else if (nota >= 4 && nota <= 6){
