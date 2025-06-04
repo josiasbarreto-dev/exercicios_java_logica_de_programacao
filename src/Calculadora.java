@@ -5,29 +5,28 @@ public class Calculadora {
         Scanner scan = new Scanner(System.in);
         int option = getOption(scan);
 
-        int number1 = obterNumero1(scan);
-        int number2 = obterNumero2(scan);
+        int[] numbers = lerNumeros();
 
         switch (option){
             case 1:
                 System.out.println("Soma");
-                System.out.println(somar(number1, number2));
+                System.out.println(somar(numbers[0], numbers[1]));
                 break;
             case 2:
                 System.out.println("Subtração");
-                System.out.println(subtrair(number1, number2));
+                System.out.println(subtrair(numbers[0], numbers[1]));
                 break;
             case 3:
                 System.out.println("Multiplicação");
-                System.out.println(multiplicar(number1, number2));
+                System.out.println(multiplicar(numbers[0], numbers[1]));
                 break;
             case 4:
                 System.out.println("Divisão");
-                System.out.println(dividir(number1, number2));
+                System.out.println(dividir(numbers[0], numbers[1]));
                 break;
             case 5:
                 System.out.println("Potenciação");
-                System.out.println(calcularPotencia(number1, number2));
+                System.out.println(calcularPotencia(numbers[0], numbers[1]));
                 break;
             default:
                 System.out.println("Opção inválida!");
@@ -49,14 +48,16 @@ public class Calculadora {
         return scan.nextInt();
     }
 
-    public static int obterNumero1(Scanner scan){
-        System.out.println("Escolha o número 1:");
-        return scan.nextInt();
-    }
+    public static int[] lerNumeros(){
+        Scanner scan = new Scanner(System.in);
 
-    public static int obterNumero2(Scanner scan){
+        System.out.println("Escolha o número 1:");
+        int number1 =  scan.nextInt();
+
         System.out.println("Escolha o número 2:");
-        return scan.nextInt();
+        int number2 = scan.nextInt();
+
+        return new int[] {number1, number2};
     }
 
     public static int somar(int number1, int number2){
