@@ -7,14 +7,15 @@ import java.util.Scanner;
 
 public class Lesson03 {
     public static void main (String[] args) {
-        int chooseExit;
-        do {
-            Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        Random random = new Random();
 
+        int chooseExit;
+
+        do {
             exibirTelaInicial();
             int choosePlayer = sc.nextInt();
 
-            Random random = new Random();
             int chooseMachine = random.nextInt(3) + 1;
 
             System.out.println("=====================================");
