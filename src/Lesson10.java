@@ -5,20 +5,19 @@ import java.util.Scanner;
 
 public class Lesson10 {
     public static void main (String[] args){
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         System.out.print("Digite o tamanho da matriz quadrada (n): ");
-        int n = sc.nextInt();
+        int n = scan.nextInt();
 
-        int[][] matriz = lerMatriz(n);
+        int[][] matriz = lerMatriz(n, scan);
         int resultado = somaDiagonalPrincipal(matriz);
 
         System.out.println("A soma da diagonal principal é: " + resultado);
     }
 
 
-    public static int[][] lerMatriz(int n) {
-        Scanner scanner = new Scanner(System.in);
+    public static int[][] lerMatriz(int n, Scanner scan) {
         int[][] matriz = new int[n][n];
 
         System.out.println("Digite os elementos da matriz " + n + "x" + n + ":");
@@ -26,7 +25,7 @@ public class Lesson10 {
         for (int i = 0; i < n; i++) {
             System.out.print("Digite os elementos da linha " + (i + 1) + " separados por espaço: ");
             for (int j = 0; j < n; j++) {
-                matriz[i][j] = scanner.nextInt();
+                matriz[i][j] = scan.nextInt();
             }
         }
 
