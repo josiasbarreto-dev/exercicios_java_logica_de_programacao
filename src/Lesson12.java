@@ -6,11 +6,13 @@ ordene cada vetor individualmente, e combine os dois vetores
 gerando um novo vetor de 100 posições, ordenando esse novo. */
 public class Lesson12 {
     public static void main(String[] args) {
+        Random random = new Random();
+
         int[] vector1 = new int[50];
         int[] vector2 = new int[50];
 
-        int[] randomVector1 = generateRandomNumbers(vector1);
-        int[] randomVector2 = generateRandomNumbers(vector2);
+        int[] randomVector1 = generateRandomNumbers(vector1, random);
+        int[] randomVector2 = generateRandomNumbers(vector2, random);
 
         int[] mergedVector = mergeArrays(randomVector1, randomVector2);
         Arrays.sort(mergedVector);
@@ -18,8 +20,7 @@ public class Lesson12 {
         System.out.println(Arrays.toString(mergedVector));
     }
 
-    public static int[] generateRandomNumbers(int[] vector){
-        Random random = new Random();
+    public static int[] generateRandomNumbers(int[] vector, Random random){
         for (int i = 0; i < vector.length ; i++){
             int numberRandom = random.nextInt(101);
             vector[i] = numberRandom;
