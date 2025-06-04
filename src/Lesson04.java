@@ -5,17 +5,7 @@ switch-case para determinar a operação que deve ser executada,
 conforme o usuário escolheu no menu de opções */
 public class Lesson04 {
     public static void main (String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("-----------------------------------------------");
-        System.out.println("------------- Calculadora Padrão --------------");
-        System.out.println("-----------------------------------------------");
-        System.out.println("ESCOLHA A OPERAÇÃO DESEJADA:");
-        System.out.println("1) Soma (+)");
-        System.out.println("2) Subtração (-)");
-        System.out.println("3) Multiplicação (*)");
-        System.out.println("4) Divisão (/)");
-        int option = sc.nextInt();
-
+        int option = getOption();
         switch (option){
             case 1:
                 System.out.println("Soma");
@@ -29,9 +19,27 @@ public class Lesson04 {
             case 4:
                 System.out.println("Divisão");
                 break;
+            case 5:
+                System.out.println("Potenciação");
+                break;
             default:
                 System.out.println("Opção inválida!");
         }
 
+    }
+
+    public static int getOption(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("-----------------------------------------------");
+        System.out.println("------------- Calculadora Padrão --------------");
+        System.out.println("-----------------------------------------------");
+        System.out.println("ESCOLHA A OPERAÇÃO DESEJADA:");
+        System.out.println("1) Soma (+)");
+        System.out.println("2) Subtração (-)");
+        System.out.println("3) Multiplicação (*)");
+        System.out.println("4) Divisão (/)");
+        System.out.println("5) Potenciação (^)");
+
+        return sc.nextInt();
     }
 }
