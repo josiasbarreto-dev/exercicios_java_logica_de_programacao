@@ -1,16 +1,23 @@
-public class Lesson09 {
-    public static void main (String[] args){
-        int number = 25;
+import java.util.Scanner;
 
-        // to do
-    }
-    public static int fibonacci(int number){
-        if (number == 0){
-            return 0;
+public class Lesson09 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Informe o número limite para a sequência de Fibonacci: ");
+        int limite = sc.nextInt();
+
+        System.out.println("Sequência de Fibonacci até " + limite + ":");
+
+        int a = 0, b = 1;
+
+        while (a <= limite) {
+            System.out.print(a + " ");
+            int proximo = a + b;
+            a = b;
+            b = proximo;
         }
-        if (number == 1){
-            return 1;
-        }
-        return fibonacci(number - 1) + fibonacci(number -2);
+
+        sc.close();
     }
 }
